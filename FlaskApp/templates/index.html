@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Indiegogo</title>
+</head>
+
+<body>
+	<form action="/" name = "submit" method=post>
+		<text>Search title:</text>
+		<input type="text" name="text1">
+		<text>Search tagline:</text>
+		<input type="text" name="text2">
+		<input type="submit" name="my-form" value="Submit">
+
+	</form> 
+
+	<form action="/" name = "submit" method=post>
+		<input type="hidden" name ="text1">
+		<input type="hidden" name="text2">
+		<input type="submit" name="clear" value="Clear">
+	</form>
+	<table border="1px solid black" style="width:100%">
+		{% for data in data.response %}
+		<tr>
+			<td>{{data.title}}</td>
+			<td><img src={{data.image_types.baseball_card}}></td>
+			<td>{{data.tagline}}</td> 
+		</tr>
+		{% endfor %}
+	</table>
+	</html>
